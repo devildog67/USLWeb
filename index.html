@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Survival Library Web</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #E8E8E8;
+            color: #333333;
+        }
+        header {
+            background-color: #6B8EAD;
+        }
+        nav {
+            background-color: #333333;
+        }
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .card-header {
+            background-color: #6B8EAD;
+            color: #FFFFFF;
+        }
+        .card-header .btn-link {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .card-header .btn-link:hover {
+            color: #FFD700;
+        }
+        .card-body {
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFFFFF;
+            color: #333333;
+            border: 1px solid #E8E8E8;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .list-group-item a {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .save-icon {
+            color: #6B8EAD;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .save-icon:hover {
+            color: #333333;
+        }
+        .delete-icon {
+            color: #FF0000;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .delete-icon:hover {
+            color: #AA0000;
+        }
+        .btn-dark {
+            background-color: #6B8EAD;
+            border: none;
+            color: #FFFFFF;
+        }
+        .btn-dark:hover {
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+        footer {
+            background-color: #6B8EAD;
+        }
+        .favorites-sidebar {
+            border-right: 2px solid #333333;
+            padding-right: 20px;
+        }
+        .favorites-sidebar .card {
+            margin-bottom: 1rem;
+        }
+        .container {
+            max-width: 1600px;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-white text-center py-3">
+        <h1>The Ultimate Survival Library Web</h1>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo">USL Web</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#general" data-target="#collapseGeneral">General</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blogs" data-target="#collapseBlogs">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#forums" data-target="#collapseForums">Forums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#food" data-target="#collapseFood">Food</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#firearms" data-target="#collapseFirearms">Firearms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#homestead" data-target="#collapseHomestead">Homestead</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pinterest" data-target="#collapsePinterest">Pinterest</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#podcasts" data-target="#collapsePodcasts">PodCasts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#facebook" data-target="#collapseFacebook">Facebook</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reddit" data-target="#collapseReddit">Reddit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#documents" data-target="#collapseDocuments">Documents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#youtube" data-target="#collapseYouTube">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3 favorites-sidebar">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Favorites</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group" id="favoritesList"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingGeneral">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseGeneral" aria-expanded="false" aria-controls="collapseGeneral">
+                                    General
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseGeneral" class="collapse" aria-labelledby="headingGeneral" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="generalList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingBlogs">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBlogs" aria-expanded="false" aria-controls="collapseBlogs">
+                                    Blogs
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseBlogs" class="collapse" aria-labelledby="headingBlogs" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="blogsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingForums">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseForums" aria-expanded="false" aria-controls="collapseForums">
+                                    Forums
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseForums" class="collapse" aria-labelledby="headingForums" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="forumsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFood">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">
+                                    Food
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFood" class="collapse" aria-labelledby="headingFood" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="foodList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFirearms">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFirearms" aria-expanded="false" aria-controls="collapseFirearms">
+                                    Firearms
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFirearms" class="collapse" aria-labelledby="headingFirearms" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="firearmsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingHomestead">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHomestead" aria-expanded="false" aria-controls="collapseHomestead">
+                                    Homestead
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseHomestead" class="collapse" aria-labelledby="headingHomestead" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="homesteadList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingPinterest">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePinterest" aria-expanded="false" aria-controls="collapsePinterest">
+                                    Pinterest
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapsePinterest" class="collapse" aria-labelledby="headingPinterest" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="pinterestList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingPodcasts">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePodcasts" aria-expanded="false" aria-controls="collapsePodcasts">
+                                    PodCasts
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapsePodcasts" class="collapse" aria-labelledby="headingPodcasts" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="podcastsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFacebook">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFacebook" aria-expanded="false" aria-controls="collapseFacebook">
+                                    Facebook
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFacebook" class="collapse" aria-labelledby="headingFacebook" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="facebookList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingReddit">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseReddit" aria-expanded="false" aria-controls="collapseReddit">
+                                    Reddit
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseReddit" class="collapse" aria-labelledby="headingReddit" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="redditList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingDocuments">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseDocuments" aria-expanded="false" aria-controls="collapseDocuments">
+                                    Documents
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseDocuments" class="collapse" aria-labelledby="headingDocuments" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="documentsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingYouTube">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseYouTube" aria-expanded="false" aria-controls="collapseYouTube">
+                                    YouTube
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseYouTube" class="collapse" aria-labelledby="headingYouTube" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul class="list-group" id="youtubeList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <section class="submit-section mt-0">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSubmit" aria-expanded="true" aria-controls="collapseSubmit">
+                                    Submit a Recommended Website
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseSubmit" class="collapse show">
+                            <div class="card-body">
+                                <form id="submissionForm">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="website" placeholder="Recommended Website" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <footer class="text-white text-center py-3 mt-5">
+        <p>&copy; 2024 The Ultimate Survival Library Web. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('submissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your submission!');
+            document.getElementById('submissionForm').reset();
+        });
+
+        // Function to fetch and display resources
+        function loadResources(jsonFile, listId) {
+            fetch(jsonFile)
+                .then(response => response.json())
+                .then(data => {
+                    const list = document.getElementById(listId);
+                    data.forEach(site => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'list-group-item';
+                        const link = document.createElement('a');
+                        link.href = site.url;
+                        link.textContent = site.title;
+                        link.target = '_blank';
+                        listItem.appendChild(link);
+
+                        const saveIcon = document.createElement('span');
+                        saveIcon.className = 'save-icon ml-2';
+                        saveIcon.innerHTML = '💾';
+                        saveIcon.addEventListener('click', () => addToFavorites(site.title, site.url));
+                        listItem.appendChild(saveIcon);
+
+                        list.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error(`Error fetching ${jsonFile}:`, error));
+        }
+
+        function addToFavorites(title, url) {
+            const favoritesList = document.getElementById('favoritesList');
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            const link = document.createElement('a');
+            link.href = url;
+            link.textContent = title;
+            link.target = '_blank';
+            listItem.appendChild(link);
+
+            const deleteIcon = document.createElement('span');
+            deleteIcon.className = 'delete-icon ml-2';
+            deleteIcon.innerHTML = '🗑️';
+            deleteIcon.addEventListener('click', () => removeFromFavorites(listItem));
+            listItem.appendChild(deleteIcon);
+
+            favoritesList.appendChild(listItem);
+            saveFavorites();
+        }
+
+        function removeFromFavorites(listItem) {
+            const favoritesList = document.getElementById('favoritesList');
+            favoritesList.removeChild(listItem);
+            saveFavorites();
+        }
+
+        function saveFavorites() {
+            const favorites = [];
+            document.querySelectorAll('#favoritesList .list-group-item').forEach(item => {
+                const link = item.querySelector('a');
+                favorites.push({ title: link.textContent, url: link.href });
+            });
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }
+
+        function loadFavorites() {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const favoritesList = document.getElementById('favoritesList');
+            favorites.forEach(site => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                const link = document.createElement('a');
+                link.href = site.url;
+                link.textContent = site.title;
+                link.target = '_blank';
+                listItem.appendChild(link);
+
+                const deleteIcon = document.createElement('span');
+                deleteIcon.className = 'delete-icon ml-2';
+                deleteIcon.innerHTML = '🗑️';
+                deleteIcon.addEventListener('click', () => removeFromFavorites(listItem));
+                listItem.appendChild(deleteIcon);
+
+                favoritesList.appendChild(listItem);
+            });
+        }
+
+        // Load resources for each panel bar
+        loadResources('general.json', 'generalList');
+        loadResources('blogs.json', 'blogsList');
+        loadResources('forums.json', 'forumsList');
+        loadResources('food.json', 'foodList');
+        loadResources('firearms.json', 'firearmsList');
+        loadResources('homestead.json', 'homesteadList');
+        loadResources('pinterest.json', 'pinterestList');
+        loadResources('podcasts.json', 'podcastsList');
+        loadResources('facebook.json', 'facebookList');
+        loadResources('reddit.json', 'redditList');
+        loadResources('documents.json', 'documentsList');
+        loadResources('youtube.json', 'youtubeList');
+
+        // Handle navbar link clicks to open corresponding panel bar and scroll to it
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetCollapse = this.getAttribute('data-target');
+                const targetElement = document.querySelector(targetCollapse);
+
+                if (targetElement) {
+                    // Close all other collapse elements
+                    document.querySelectorAll('.collapse.show').forEach(collapse => {
+                        $(collapse).collapse('hide');
+                    });
+
+                    // Open the target collapse element
+                    $(targetCollapse).collapse('show');
+
+                    // Scroll to the target element
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Load favorites from localStorage when the page loads
+        window.addEventListener('load', loadFavorites);
+
+        // Save favorites to localStorage when the page is unloaded
+        window.addEventListener('beforeunload', saveFavorites);
+    </script>
+</body>
+</html>
