@@ -1,0 +1,1 @@
+The Ultimate Survival Library Web is a website that provides a collection of hundreds of survival/prepper websites, blogs, YouTube channels, podcasts, Reddit communities, Pinterest pages, Forums, Facebook pages, and document sources. Users can submit recommended websites to be added to the USL Web.
