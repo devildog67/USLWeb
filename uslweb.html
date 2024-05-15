@@ -1,0 +1,649 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The USL Web is only fraction of the features available in the full Ultimate Survival Library application.">
+    <base href="https://demos.telerik.com/kendo-ui/treeview/index">
+    <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
+    <title>Ultimate Survival Library Web</title>
+    <link href="https://kendo.cdn.telerik.com/themes/6.7.0/default/default-main.css" rel="stylesheet" />
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/jquery.min.js"></script>   
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
+    <script src="https://www.dropbox.com/scl/fi/qzwo42weoljy21857p9qn/USL.js?rlkey=j9nsyylz601hvxonve5qznvav&dl=1"> </script>
+</head>
+<style>
+body {
+    font-family: "Courier New", monospace;
+    background-color: #D3D3D3; /* Light Gray */
+    color: #2E2E2E;  /* Dark Gray */
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #556B2F; /* Dark Olive Green */
+    color: #F0E68C;  /* Khaki */
+    padding: 1em;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+main {
+    padding: 1em;
+}
+#intro {
+    background-color: #8B4513; /* Saddle Brown */
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px #2E2E2E;  /* Dark Gray */
+}
+.blurb p {
+    margin: 0;
+    padding: 0.5em;
+    background-color: #808000;  /* Olive */
+    color: #FFFFFF;  /* White for better readability */
+    border-radius: 5px;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+.blurb a:visited {
+    color: #FFFFFF !important;  /* Set color to white */
+}
+.siteTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:yellow;
+}
+footer {
+    background-color: #556B2F; /* Dark Olive Green */
+    color: #F0E68C;  /* Khaki */
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#demo-section-title h3 {
+    margin-bottom: 2em;
+    text-align: center;
+}
+.treeview-flex h4 {
+    color: #656565;
+    margin-bottom: 1em;
+    text-align: center;
+}
+#demo-section-title {
+    width: 100%;
+    flex: auto;
+}
+.treeview-flex {
+    flex: 1;
+    -ms-flex: 1 0 auto;
+}
+.k-treeview {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: transparent !important;
+}
+.k-treeview .k-in {
+    color: #FFFFFF;  /* White */
+    font-size:small;
+}
+#treeview-kendo .k-sprite {
+    background-image: url("../content/web/treeview/coloricons-sprite.png");
+}
+/* Targets both visited and unvisited links within the Kendo TreeView */
+.k-treeview a, .k-treeview a:visited {
+    color: #FFFFFF !important;  /* Set color to white */
+}
+#treeview-telerik .k-sprite {
+    background-image: url("../content/web/treeview/coloricons-sprite.png");
+}
+.demo-section {
+    margin-bottom: 5px;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.rootfolder {
+    background-position: 0 0;
+}
+.folder {
+    background-position: 0 -16px;
+}
+.pdf {
+    background-position: 0 -32px;
+}
+.html {
+    background-position: 0 -48px;
+}
+.image {
+    background-position: 0 -64px;
+}
+.demo-section {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* this will make it take the full height of the viewport */
+    width: 100vw;
+}
+.treeview-container {
+    width: 15%;
+    overflow-y: auto; /* this will add a scrollbar if the content is taller than the viewport */
+    background-color: transparent !important;
+}
+.iframe-container {
+    min-width: 85%;
+}
+.iframe-container iframe {
+    width: 82vw;
+    height: 100vh; /* this will make the iframe take the full height of the viewport */
+    /* border: solid; this removes the border that iframes have by default */
+    position: fixed;
+}
+#example, #treeview-kendo {
+    margin: 0;
+    padding: 0;
+    background-color: transparent !important;
+}
+#treeview-kendo {
+    text-align: left;
+    background-color: transparent !important;
+}
+#toggle-button {
+    float: left;
+    margin-right: 10px; /* Optional, gives a bit of space between button and treeview */
+}
+#toggle-blurb-button {
+    float: right;
+    margin-right: 10px; /* Optional, gives a bit of space between button and treeview */
+}
+</style>
+
+<body>
+    <main style="padding:0;">
+        <section id="intro">
+            <!-- <h2>Intro Blurbs</h2> -->
+            <div name="blurb" id="blurb" class="blurb">
+                <!-- Add each blurb here, for example: -->
+                <p>Welcome to the <span class="siteTitle">Ultimate Survival Library Web</span> — your go-to destination for all things prepping and survival. Whether you're a seasoned veteran or a newbie just starting your journey, we've got you covered!</p>
+                <p>If the link does not load in the viewer on the right of the screen, click the "page" icon to the left of the website name to open it in a new tab. To see the full application visit <a href="https://www.survivallibrarydownload.com"><span class="siteTitle">www.survivallibrarydownload.com/</span></a>. Email website suggestions to: <a href="mailto:support@ultimatesurvivallibrary.com">support@ultimatesurvivallibrary.com</a></p>
+            </div>
+            <button id="toggle-button">Toggle Treeview</button>
+            <div>
+               <span style="font-weight: bold; color: red; background-color: white;">NOTE:</span> 
+               <span style="font-weight: bold; color: white;">If the page does not display, click the white page icon to the left of the link</span>
+            </div>
+            <button id="toggle-blurb-button">Toggle Text Above</button>
+            <div id="example">
+                <div class="demo-section wide">
+                    <div id="treeview-container" class="treeview-container">
+                        <div id="treeview-kendo"></div>
+                    </div>
+                    <div id="iframe-container" name = "iframe-container" class="iframe-container">
+                      <iframe id="contentframe" name="contentframe" src=""></iframe>
+                      <!--<embed id="contentframe" name="contentframe" type="text/html" src="">-->
+                    </div> 
+                </div>
+        </section>
+    </main>
+    <script id="treeview" type="text/kendo-ui-template">
+      # if (!item.items && item.spriteCssClass == "html") 
+      { #
+          <a title='#: item.text #' href='#: item.url #' target='contentframe'>
+              #: item.text #
+          </a>
+      # } 
+      else 
+            if (item.items && item.spriteCssClass)
+            { #
+                #: item.text #
+            # } 
+            else 
+            { #
+                <span class="k-sprite folder"></span>
+                #: item.text #
+            # } #
+    </script>
+    <script>
+        $("#treeview-kendo").kendoTreeView({
+            template: kendo.template($("#treeview").html()),
+            dataSource: 
+[
+
+{
+      id: 301, text: "General", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 302, text: "1776PATRIOTUSA.COM", spriteCssClass: "html", url: "https://www.1776patriotusa.com/" },
+           {      id: 303, text: "A Woodsrunners Diary", spriteCssClass: "html", url: "https://www.woodsrunnersdiary.blogspot.com/" },
+           {      id: 304, text: "All Self-Sustained", spriteCssClass: "html", url: "https://www.allselfsustained.com/" },
+           {      id: 305, text: "Alone in the Wilderness Journals", spriteCssClass: "html", url: "https://www.nps.gov/lacl/learn/historyculture/more-one-mans.htm" },
+           {      id: 306, text: "Alpha Survivalist", spriteCssClass: "html", url: "https://www.alphasurvivalist.net/" },
+           {      id: 307, text: "Apartment Prepper", spriteCssClass: "html", url: "https://www.apartmentprepper.com/" },
+           {      id: 308, text: "Are You Prepared Momma?", spriteCssClass: "html", url: "https://www.areyoupreparedmama.com/" },
+           {      id: 309, text: "Army Surplus World", spriteCssClass: "html", url: "https://www.armysurplusworld.com" },
+           {      id: 310, text: "Ask A Prepper", spriteCssClass: "html", url: "https://www.askaprepper.com/" },
+           {      id: 311, text: "AZ Weapon Craft Prepper", spriteCssClass: "html", url: "https://www.azweaponcraftprepper.com/" },
+           {      id: 312, text: "Backdoor Prepper", spriteCssClass: "html", url: "https://www.backdoorprepper.com/" },
+           {      id: 313, text: "Backdoor Survival", spriteCssClass: "html", url: "https://www.backdoorsurvival.com/" },
+           {      id: 314, text: "Backwoods Home Magazine", spriteCssClass: "html", url: "https://www.backwoodshome.com/" },
+           {      id: 315, text: "Be Prepared To Survive", spriteCssClass: "html", url: "https://www.survivalresources.com" },
+           {      id: 316, text: "Bio Prepper", spriteCssClass: "html", url: "https://www.bioprepper.com/" },
+           {      id: 317, text: "BioLite", spriteCssClass: "html", url: "https://www.bioliteenergy.com/" },
+           {      id: 318, text: "Bugout Channel", spriteCssClass: "html", url: "https://www.bugoutchannel.com/" },
+           {      id: 319, text: "Bugout Survival", spriteCssClass: "html", url: "https://www.bugoutsurvival.com/" },
+           {      id: 320, text: "Bunker Basics", spriteCssClass: "html", url: "https://www.bunkerbasics.com/" },
+           {      id: 321, text: "Camping Survival", spriteCssClass: "html", url: "https://www.campingsurvival.com/" },
+           {      id: 322, text: "Canadian Preppers Network", spriteCssClass: "html", url: "https://www.canadianpreppersnetwork.com/" },
+           {      id: 323, text: "City Prepping", spriteCssClass: "html", url: "https://www.cityprepping.com/" },
+           {      id: 324, text: "Crisis Equipped", spriteCssClass: "html", url: "https://www.crisisequipped.com/blog/" },
+           {      id: 325, text: "Crisis Survivor Tips", spriteCssClass: "html", url: "https://www.crisissurvivortips.com/" },
+           {      id: 326, text: "Daily Survival", spriteCssClass: "html", url: "https://www.dailysurvival.info/" },
+           {      id: 327, text: "Doom and Bloom Medical", spriteCssClass: "html", url: "https://www.doomandbloom.net/" },
+           {      id: 328, text: "Dooms Day Prep", spriteCssClass: "html", url: "https://www.doomsdayprep.com/" },
+           {      id: 329, text: "Doug Ritter Survival", spriteCssClass: "html", url: "https://www.dougritter.com" },
+           {      id: 330, text: "Dystopian Survival", spriteCssClass: "html", url: "https://www.dystopiansurvival.com/" },
+           {      id: 331, text: "Eaton Rapids Joe", spriteCssClass: "html", url: "https://www.eatonrapidsjoe.blogspot.com/" },
+           {      id: 332, text: "End Times Report", spriteCssClass: "html", url: "https://www.endtimesreport.com" },
+           {      id: 333, text: "Essential Woodworking tools", spriteCssClass: "html", url: "https://www.pbs.org/woodwrightsshop/tools" },
+           {      id: 334, text: "Every Day Carry Gear", spriteCssClass: "html", url: "https://www.everydaycarrygear.com/" },
+           {      id: 335, text: "Family Survival Planning", spriteCssClass: "html", url: "https://www.familysurvivalplanning.com/" },
+           {      id: 336, text: "FishMox", spriteCssClass: "html", url: "https://www.efishmox.com/" },
+           {      id: 337, text: "Freedom Preppers", spriteCssClass: "html", url: "https://www.freedompreppers.com/index.html" },
+           {      id: 338, text: "Geek Prepper", spriteCssClass: "html", url: "https://www.geekprepper.com/" },
+           {      id: 339, text: "Graywolf Survival", spriteCssClass: "html", url: "https://www.graywolfsurvival.com/" },
+           {      id: 340, text: "Great Lakes Prepping", spriteCssClass: "html", url: "https://www.greatlakesprepping.com/" },
+           {      id: 341, text: "Ham Radio Prepper", spriteCssClass: "html", url: "https://www.hamradioprepper.com/" },
+           {      id: 342, text: "Happy Preppers", spriteCssClass: "html", url: "https://www.happypreppers.com/" },
+           {      id: 343, text: "How To Prepare For Disaster or Emergency", spriteCssClass: "html", url: "https://www.briangwilliams.us/emergency-preparedness.html" },
+           {      id: 344, text: "In The Rabbit Hole", spriteCssClass: "html", url: "https://www.intherabbithole.com/" },
+           {      id: 345, text: "In The Wilderness", spriteCssClass: "html", url: "https://www.inthewilderness.net/" },
+           {      id: 346, text: "Instinct Survivalist Wilderness Skills", spriteCssClass: "html", url: "https://www.instinctsurvivalist.com/" },
+           {      id: 347, text: "ITS Tactical", spriteCssClass: "html", url: "https://www.itstactical.com" },
+           {      id: 348, text: "Jack Mountain Bushcraft Media", spriteCssClass: "html", url: "https://www.blog.jackmtn.com/" },
+           {      id: 349, text: "Know Prepare Survive", spriteCssClass: "html", url: "https://www.knowpreparesurvive.com/" },
+           {      id: 350, text: "Knowledge Weighs Nothing", spriteCssClass: "html", url: "https://www.knowledgeweighsnothing.com/" },
+           {      id: 351, text: "Last Minute Survival", spriteCssClass: "html", url: "https://www.lastminutesurvival.com/" },
+           {      id: 352, text: "Lethimos World", spriteCssClass: "html", url: "https://www.lethimos.wixsite.com/prepping" },
+           {      id: 353, text: "Lets Talk Survival", spriteCssClass: "html", url: "https://www.letstalksurvival.com/" },
+           {      id: 354, text: "Liiving Life in Rural Iowa", spriteCssClass: "html", url: "https://www.livinglifeinruraliowa.com/" },
+           {      id: 355, text: "Listening To Katrina", spriteCssClass: "html", url: "https://www.theplacewithnoname.com/blogs/klessons/index.html" },
+           {      id: 356, text: "Mama Kautz", spriteCssClass: "html", url: "https://www.mamakautz.com/" },
+           {      id: 357, text: "Michigan Sportsman", spriteCssClass: "html", url: "https://www.michigan-sportsman.com/" },
+           {      id: 358, text: "Modern Survival Blog", spriteCssClass: "html", url: "https://www.modernsurvivalblog.com" },
+           {      id: 359, text: "Modern Survival Online", spriteCssClass: "html", url: "https://www.modernsurvivalonline.com/" },
+           {      id: 360, text: "More Than Just Surviving", spriteCssClass: "html", url: "https://www.morethanjustsurviving.com/" },
+           {      id: 361, text: "Next Step Survival", spriteCssClass: "html", url: "https://www.nextstepsurvival.com/" },
+           {      id: 362, text: "Off Grid", spriteCssClass: "html", url: "https://www.off-grid.net/" },
+           {      id: 363, text: "Offgrid Survival", spriteCssClass: "html", url: "https://www.offgridsurvival.com/" },
+           {      id: 364, text: "Paranoid Prepper", spriteCssClass: "html", url: "https://www.paranoid-prepper.com/" },
+           {      id: 365, text: "Paul Kirtley", spriteCssClass: "html", url: "https://www.paulkirtley.co.uk/" },
+           {      id: 366, text: "Pioneer Living", spriteCssClass: "html", url: "https://www.pioneerliving.net/" },
+           {      id: 367, text: "Plan and Prepared", spriteCssClass: "html", url: "https://www.planandprepared.com/" },
+           {      id: 368, text: "Practical Primitive", spriteCssClass: "html", url: "https://www.practicalprimitive.com" },
+           {      id: 369, text: "Practical Tactical", spriteCssClass: "html", url: "https://www.practicaltactical4you.com/" },
+           {      id: 370, text: "Prep For War", spriteCssClass: "html", url: "https://www.prep4war.com/" },
+           {      id: 371, text: "Prep School Daily", spriteCssClass: "html", url: "https://www.prepschooldaily.blogspot.com/" },
+           {      id: 372, text: "Prepared For Survival", spriteCssClass: "html", url: "https://www.preparedforsurvival.blogspot.com/" },
+           {      id: 373, text: "Prepared Housewives", spriteCssClass: "html", url: "https://www.prepared-housewives.com/" },
+           {      id: 374, text: "Prepared Survivalist", spriteCssClass: "html", url: "https://www.preparedsurvivalist.org/" },
+           {      id: 375, text: "Preparedness Advice", spriteCssClass: "html", url: "https://www.preparednessadvice.com/" },
+           {      id: 376, text: "Preparedness Mama", spriteCssClass: "html", url: "https://www.preparednessmama.com/" },
+           {      id: 377, text: "Preparedness Survival Forum", spriteCssClass: "html", url: "https://www.preparedness-survival.com/" },
+           {      id: 378, text: "Preparing For SHTF", spriteCssClass: "html", url: "https://www.prepforshtf.com/" },
+           {      id: 379, text: "Prepology", spriteCssClass: "html", url: "https://www.prepology.blogspot.com/" },
+           {      id: 380, text: "Prepper 365", spriteCssClass: "html", url: "https://www.prepper365.com/" },
+           {      id: 381, text: "Prepper Handbook Blog", spriteCssClass: "html", url: "https://www.prepperhandbook.blogspot.com/" },
+           {      id: 382, text: "Prepper Press", spriteCssClass: "html", url: "https://www.prepperpress.com/" },
+           {      id: 383, text: "Prepper Resources", spriteCssClass: "html", url: "https://www.prepper-resources.com/" },
+           {      id: 384, text: "Prepper Soft", spriteCssClass: "html", url: "https://www.preppersoft.com/blog/" },
+           {      id: 385, text: "Prepper Website", spriteCssClass: "html", url: "https://www.prepperwebsite.com/" },
+           {      id: 386, text: "Preppers Germany", spriteCssClass: "html", url: "https://www.preppersgermany.de/" },
+           {      id: 387, text: "Preppers Illustrated", spriteCssClass: "html", url: "https://www.preppersillustrated.com/" },
+           {      id: 388, text: "Preppers Survive", spriteCssClass: "html", url: "https://www.prepperssurvive.com/" },
+           {      id: 389, text: "Preppers Will", spriteCssClass: "html", url: "https://www.prepperswill.com/" },
+           {      id: 390, text: "Primal Survivor", spriteCssClass: "html", url: "https://www.primalsurvivor.net/" },
+           {      id: 391, text: "Quora Survival Prepping", spriteCssClass: "html", url: "https://www.quora.com/search?q=survival prepping" },
+           {      id: 392, text: "Rational Preparedness", spriteCssClass: "html", url: "https://www.rationalpreparedness.blogspot.com/" },
+           {      id: 393, text: "Ready Lifestyle", spriteCssClass: "html", url: "https://www.readylifestyle.com/" },
+           {      id: 394, text: "Reality Survival", spriteCssClass: "html", url: "https://www.americanpreppingacademy.com" },
+           {      id: 395, text: "Recoil Offgrid", spriteCssClass: "html", url: "https://www.offgridweb.com/" },
+           {      id: 396, text: "Rethink Survival", spriteCssClass: "html", url: "https://www.rethinksurvival.com/" },
+           {      id: 397, text: "Rouge Preparedness", spriteCssClass: "html", url: "https://www.roguepreparedness.com/" },
+           {      id: 398, text: "Safe Castle Blog", spriteCssClass: "html", url: "https://www.blog.safecastle.com/" },
+           {      id: 399, text: "Samantha Biggers", spriteCssClass: "html", url: "https://www.samanthabiggers.com/" },
+           {      id: 400, text: "Seasoned Citizen Prepper", spriteCssClass: "html", url: "https://www.seasonedcitizenprepper.com/" },
+           {      id: 401, text: "Sergeant Preppers Survival Club", spriteCssClass: "html", url: "https://www.sergeantprepperssurvivalclub.com/" },
+           {      id: 402, text: "SHTF Base", spriteCssClass: "html", url: "https://www.shtfbase.com/" },
+           {      id: 403, text: "SHTF Dad", spriteCssClass: "html", url: "https://www.shtfdad.com/" },
+           {      id: 404, text: "SHTF Plan", spriteCssClass: "html", url: "https://www.shtfplan.com/" },
+           {      id: 405, text: "SHTF Preparedness", spriteCssClass: "html", url: "https://www.shtfpreparedness.com/" },
+           {      id: 406, text: "SHTF School", spriteCssClass: "html", url: "https://www.shtfschool.com/" },
+           {      id: 407, text: "Silver.com", spriteCssClass: "html", url: "https://www.silver.com/" },
+           {      id: 408, text: "Simple Family Preparedness", spriteCssClass: "html", url: "https://www.simplefamilypreparedness.com/" },
+           {      id: 409, text: "Simply Preparing", spriteCssClass: "html", url: "https://www.simplypreparing.com/" },
+           {      id: 410, text: "Skilled Survival", spriteCssClass: "html", url: "https://www.skilledsurvival.com/" },
+           {      id: 411, text: "Skilled Survivor", spriteCssClass: "html", url: "https://www.skilledsurvivor.com/" },
+           {      id: 412, text: "Spy, Escape and Evasion", spriteCssClass: "html", url: "https://www.spyescapeandevasion.com/" },
+           {      id: 413, text: "Survival & Preparedness System", spriteCssClass: "html", url: "https://www.survivalsystem.blogspot.com/" },
+           {      id: 414, text: "Survival Blog", spriteCssClass: "html", url: "https://www.survivalblog.com" },
+           {      id: 415, text: "Survival Cache", spriteCssClass: "html", url: "https://www.survivalcache.com" },
+           {      id: 416, text: "Survival Common Sense", spriteCssClass: "html", url: "https://www.survivalcommonsense.com/" },
+           {      id: 417, text: "Survival Dan", spriteCssClass: "html", url: "https://www.survivaldan.com/" },
+           {      id: 418, text: "Survival Frog", spriteCssClass: "html", url: "https://www.survivalfrog.com/" },
+           {      id: 419, text: "Survival Jack", spriteCssClass: "html", url: "https://www.survivaljack.com/" },
+           {      id: 420, text: "Survival Jane", spriteCssClass: "html", url: "https://www.survivorjane.com/" },
+           {      id: 421, text: "Survival Jar", spriteCssClass: "html", url: "https://www.survivaljar.com/" },
+           {      id: 422, text: "Survival Journal", spriteCssClass: "html", url: "https://www.survival-journal.com/" },
+           {      id: 423, text: "Survival Life", spriteCssClass: "html", url: "https://www.survivallife.com/" },
+           {      id: 424, text: "Survival Magazine", spriteCssClass: "html", url: "https://www.survivalmagazine.org/" },
+           {      id: 425, text: "Survival Prep Store & Blog", spriteCssClass: "html", url: "https://www.thesurvivalprepstore.com/" },
+           {      id: 426, text: "Survival Punk", spriteCssClass: "html", url: "https://www.survivalpunk.com/" },
+           {      id: 427, text: "Survival Ring", spriteCssClass: "html", url: "https://www.survivalring.org/" },
+           {      id: 428, text: "Survival Sherpa", spriteCssClass: "html", url: "https://www.survivalsherpa.wordpress.com/" },
+           {      id: 429, text: "Survival Sullivan", spriteCssClass: "html", url: "https://www.survivalsullivan.com/" },
+           {      id: 430, text: "Survival Tek", spriteCssClass: "html", url: "https://www.survivaltek.com/" },
+           {      id: 431, text: "Survivalist 101", spriteCssClass: "html", url: "https://www.survivalist101.com/" },
+           {      id: 432, text: "Survivalist Boards", spriteCssClass: "html", url: "https://www.survivalistboards.com" },
+           {      id: 433, text: "Survivalist Daily", spriteCssClass: "html", url: "https://www.survivalistdaily.com/" },
+           {      id: 434, text: "Survivalist On Tap", spriteCssClass: "html", url: "https://www.survivalistontap.com/" },
+           {      id: 435, text: "Survivalist Prepper", spriteCssClass: "html", url: "https://www.survivalistprepper.net/" },
+           {      id: 436, text: "Survive After End", spriteCssClass: "html", url: "https://www.surviveafterend.com/" },
+           {      id: 437, text: "Survive Doomsday", spriteCssClass: "html", url: "https://www.survivedoomsday.com/" },
+           {      id: 438, text: "Survive UK", spriteCssClass: "html", url: "https://www.surviveuk.com/" },
+           {      id: 439, text: "Surviving in Argentina", spriteCssClass: "html", url: "https://www.ferfal.blogspot.com/" },
+           {      id: 440, text: "Surviving Life With Alpha Wolfe", spriteCssClass: "html", url: "https://www.survivinglifewithalphawolf.wordpress.com/" },
+           {      id: 441, text: "Surviving Prepper", spriteCssClass: "html", url: "https://www.survivingprepper.com/" },
+           {      id: 442, text: "SurvivoPedia", spriteCssClass: "html", url: "https://www.survivopedia.com/" },
+           {      id: 443, text: "Survivors Fortress", spriteCssClass: "html", url: "https://www.survivorsfortress.com/" },
+           {      id: 444, text: "Talon Survival", spriteCssClass: "html", url: "https://www.talonsurvival.com/" },
+           {      id: 445, text: "Texas Preparedness Group", spriteCssClass: "html", url: "https://www.texaspreparednessgroup.ning.com" },
+           {      id: 446, text: "The 7 Ps Blog", spriteCssClass: "html", url: "https://www.priorproperplanningpppp.blogspot.com/" },
+           {      id: 447, text: "The Backyard Pioneer", spriteCssClass: "html", url: "https://www.thebackyardpioneer.com/" },
+           {      id: 448, text: "The Economic Collapse Blog", spriteCssClass: "html", url: "https://www.theeconomiccollapseblog.com/" },
+           {      id: 449, text: "The Future Prepared", spriteCssClass: "html", url: "https://www.thefutureprepared.com/" },
+           {      id: 450, text: "The Merril Project", spriteCssClass: "html", url: "https://www.themerrillproject.com/blog/" },
+           {      id: 451, text: "The Modern Survivalist", spriteCssClass: "html", url: "https://www.themodernsurvivalist.com/" },
+           {      id: 452, text: "The Prepared", spriteCssClass: "html", url: "https://www.theprepared.com/" },
+           {      id: 453, text: "The Prepared Christian", spriteCssClass: "html", url: "https://www.thepreparedchristian.blogspot.com/" },
+           {      id: 454, text: "The Preparedness Experience", spriteCssClass: "html", url: "https://www.thepreparednessexperience.com/" },
+           {      id: 455, text: "The Prepper Journal", spriteCssClass: "html", url: "https://www.theprepperjournal.com/" },
+           {      id: 456, text: "The Prepping Guide", spriteCssClass: "html", url: "https://www.thepreppingguide.com/" },
+           {      id: 457, text: "The Survival Corps", spriteCssClass: "html", url: "https://www.thesurvivalcorps.com/" },
+           {      id: 458, text: "The Survival Journal", spriteCssClass: "html", url: "https://www.thesurvivaljournal.com/" },
+           {      id: 459, text: "The Survival Library", spriteCssClass: "html", url: "https://www.survivallibrarydownload.com" },
+           {      id: 460, text: "The Survival Life", spriteCssClass: "html", url: "https://www.thesurvivallife.com/" },
+           {      id: 461, text: "The Survival Mom", spriteCssClass: "html", url: "https://www.thesurvivalmom.com/" },
+           {      id: 462, text: "The Survivalist Blog", spriteCssClass: "html", url: "https://www.thesurvivalistblog.net" },
+           {      id: 463, text: "The Village Prepper", spriteCssClass: "html", url: "https://www.thevillageprepper.com/" },
+           {      id: 464, text: "The Warrior Class", spriteCssClass: "html", url: "https://www.thewarriorclass.blogspot.com/" },
+           {      id: 465, text: "Thompson Snares", spriteCssClass: "html", url: "https://www.thompsonsnares.com" },
+           {      id: 466, text: "Top Outdoor Survival", spriteCssClass: "html", url: "https://www.topoutdoorsurvival.com/" },
+           {      id: 467, text: "Top Prepper Websites", spriteCssClass: "html", url: "https://www.topprepperwebsites.com" },
+           {      id: 468, text: "True Prepper", spriteCssClass: "html", url: "https://www.trueprepper.com/" },
+           {      id: 469, text: "UK Preppers Guide", spriteCssClass: "html", url: "https://www.ukpreppersguide.co.uk/" },
+           {      id: 470, text: "Ultimate Survival Tips", spriteCssClass: "html", url: "https://www.ultimatesurvivaltips.com/" },
+           {      id: 471, text: "Urban Survival", spriteCssClass: "html", url: "https://www.urbansurvival.com/" },
+           {      id: 472, text: "Urban Survival Site", spriteCssClass: "html", url: "https://www.urbansurvivalsite.com/" },
+           {      id: 473, text: "Urban Survival Skills", spriteCssClass: "html", url: "https://www.get-urban-survival-skills.blogspot.com/" },
+           {      id: 474, text: "Warrior Tribe", spriteCssClass: "html", url: "https://www.masktactical.com/" },
+           {      id: 475, text: "We Prepper", spriteCssClass: "html", url: "https://www.weprepper.com/" },
+           {      id: 476, text: "What If It Is Today?", spriteCssClass: "html", url: "https://www.whatifitistoday.blogspot.com/" },
+           {      id: 477, text: "Wilderness Today", spriteCssClass: "html", url: "https://www.wildernesstoday.com/" },
+           {      id: 478, text: "Willow Haven Outdoor", spriteCssClass: "html", url: "https://www.willowhavenoutdoor.com/" },
+      ]
+    },
+    {
+      id: 479, text: "Forums", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 480, text: "AR15 Forums", spriteCssClass: "html", url: "https://www.ar15.com/forums/index.html" },
+           {      id: 481, text: "Australian Preparedness Forum", spriteCssClass: "html", url: "https://www.ausprep.com/" },
+           {      id: 482, text: "Blade Forums", spriteCssClass: "html", url: "https://www.bladeforums.com/" },
+           {      id: 483, text: "Camping Forums", spriteCssClass: "html", url: "https://www.campingforums.com/forum/" },
+           {      id: 484, text: "Christian Preppers Forum", spriteCssClass: "html", url: "https://www.christianforums.com/forums/christian-preppers.1230/" },
+           {      id: 485, text: "Doomsday Prepper Forums", spriteCssClass: "html", url: "https://www.doomsdayprepperforums.com/" },
+           {      id: 486, text: "Frugal Village Forum", spriteCssClass: "html", url: "https://www.frugalvillage.com/forums/preparedness-and-survival.171/" },
+           {      id: 487, text: "Homestead Forum", spriteCssClass: "html", url: "https://www.homesteadingforum.org/forums/prepping-talk.45/" },
+           {      id: 488, text: "Homesteading Today Forum", spriteCssClass: "html", url: "https://www.homesteadingtoday.com/" },
+           {      id: 489, text: "Mumsnet UK Forum", spriteCssClass: "html", url: "https://www.mumsnet.com/talk/preppers" },
+           {      id: 490, text: "My Survival Forum", spriteCssClass: "html", url: "https://www.mysurvivalforum.com/" },
+           {      id: 491, text: "NY Gun Forum", spriteCssClass: "html", url: "https://www.nygunforum.com/forums/prepping-survival-security.16/" },
+           {      id: 492, text: "Palmetto Shooters Forum", spriteCssClass: "html", url: "https://www.palmettoshooters.com/forums/survival-prepping-forum.7/" },
+           {      id: 493, text: "Prepared 2 Survive UK", spriteCssClass: "html", url: "https://www.p2snetwork.co.uk/" },
+           {      id: 494, text: "Preparedness Survival Forum", spriteCssClass: "html", url: "https://www.preparedness-survival.com/" },
+           {      id: 495, text: "Prepper Forums.Net", spriteCssClass: "html", url: "https://www.prepperforums.net/" },
+           {      id: 496, text: "Prepper Groups Forum", spriteCssClass: "html", url: "https://www.preppergroups.com/forum/" },
+           {      id: 497, text: "SpyderCo Forum", spriteCssClass: "html", url: "https://www.forum.spyderco.com/index.php" },
+           {      id: 498, text: "Survival Magazine Forum", spriteCssClass: "html", url: "https://www.survivalforum.survivalmagazine.org/" },
+           {      id: 499, text: "Survival Monkey", spriteCssClass: "html", url: "https://www.survivalmonkey.com/" },
+           {      id: 500, text: "Survival UK Forum", spriteCssClass: "html", url: "https://www.forum.survivaluk.net/" },
+           {      id: 501, text: "Survivalist Boards", spriteCssClass: "html", url: "https://www.survivalistboards.com" },
+           {      id: 502, text: "Texas Hunting Forum", spriteCssClass: "html", url: "https://www.texashuntingforum.com/forum/ubbthreads.php" },
+           {      id: 503, text: "The Outdoor Trading Post", spriteCssClass: "html", url: "https://www.theoutdoortradingpost.com/forum.php" },
+           {      id: 504, text: "The Prepared Forum", spriteCssClass: "html", url: "https://www.theprepared.com/forum/" },
+           {      id: 505, text: "UK Preppers Forum", spriteCssClass: "html", url: "https://www.uk-preppers.co.uk/forum/index.php" },
+           {      id: 506, text: "Utah Preppers", spriteCssClass: "html", url: "https://www.utahpreppers.com/" },
+           {      id: 507, text: "When SHTF Forums", spriteCssClass: "html", url: "https://www.whenshtf.com/" },
+           {      id: 508, text: "Wilderness Survival Forum", spriteCssClass: "html", url: "https://www.wilderness-survival.net/" },
+      ]
+    },
+    {
+      id: 509, text: "Food", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 510, text: "Food Storage Made Easy", spriteCssClass: "html", url: "https://www.foodstoragemadeeasy.net/" },
+           {      id: 511, text: "Food Storage Moms", spriteCssClass: "html", url: "https://www.foodstoragemoms.com/" },
+           {      id: 512, text: "Ready Nutrition", spriteCssClass: "html", url: "https://www.readynutrition.com/" },
+           {      id: 513, text: "The Organic Prepper", spriteCssClass: "html", url: "https://www.theorganicprepper.com/" },
+      ]
+    },
+    {
+      id: 514, text: "Firearms", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 515, text: "Ammo Seek", spriteCssClass: "html", url: "https://www.ammoseek.com/" },
+           {      id: 516, text: "Big Daddy Unlimited", spriteCssClass: "html", url: "https://www.bigdaddyunlimited.com/" },
+           {      id: 517, text: "Brownells", spriteCssClass: "html", url: "https://www.brownells.com" },
+           {      id: 518, text: "Cheaper than Dirt", spriteCssClass: "html", url: "https://www.cheaperthandirt.com" },
+           {      id: 519, text: "Gun Broker", spriteCssClass: "html", url: "https://www.gunbroker.com/" },
+           {      id: 520, text: "Handgun Combatives", spriteCssClass: "html", url: "https://www.handguncombatives.store/" },
+           {      id: 521, text: "National Rifle Association !NRA Programs", spriteCssClass: "html", url: "https://www.explore.nra.org" },
+           {      id: 522, text: "Patriot Gun and Gear", spriteCssClass: "html", url: "https://www.patriotgunandgear.blogspot.com/" },
+           {      id: 523, text: "Personal Defense Network", spriteCssClass: "html", url: "https://www.personaldefensenetwork.com/" },
+           {      id: 524, text: "Range USA", spriteCssClass: "html", url: "https://www.rangeusa.com/home" },
+           {      id: 525, text: "Shooting Sports USA", spriteCssClass: "html", url: "https://www.ssusa.org/" },
+           {      id: 526, text: "Strike Industries", spriteCssClass: "html", url: "https://www.strikeindustries.com/" },
+           {      id: 527, text: "Target Sports USA Ammo", spriteCssClass: "html", url: "https://www.targetsportsusa.com" },
+           {      id: 528, text: "Texas Hunting Forum", spriteCssClass: "html", url: "https://www.texashuntingforum.com/forum/ubbthreads.php" },
+           {      id: 529, text: "Texas State Rifle Association", spriteCssClass: "html", url: "https://www.tsra.com/" },
+           {      id: 530, text: "The Armory Life", spriteCssClass: "html", url: "https://www.thearmorylife.com/" },
+           {      id: 531, text: "The Firearm Blog", spriteCssClass: "html", url: "https://www.thefirearmblog.com/blog" },
+           {      id: 532, text: "Ultimate Reloader", spriteCssClass: "html", url: "https://www.ultimatereloader.com" },
+      ]
+    },
+    {
+      id: 533, text: "Homestead", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 534, text: "Goose Creek Homestead", spriteCssClass: "html", url: "https://www.goosecreekhomestead.com/" },
+           {      id: 535, text: "Hillsborough Homesteading", spriteCssClass: "html", url: "https://www.hillsborough-homesteading.com/" },
+           {      id: 536, text: "Homestead & Prepper", spriteCssClass: "html", url: "https://www.homesteadandprepper.com/" },
+           {      id: 537, text: "Homestead Dreamer", spriteCssClass: "html", url: "https://www.homesteaddreamer.com/" },
+           {      id: 538, text: "Homestead Survival Site", spriteCssClass: "html", url: "https://www.homesteadsurvivalsite.com/" },
+           {      id: 539, text: "New Life on a Homestead", spriteCssClass: "html", url: "https://www.newlifeonahomestead.com/" },
+           {      id: 540, text: "The Homesteading Hippy", spriteCssClass: "html", url: "https://www.thehomesteadinghippy.com/" },
+      ]
+    },
+    {
+      id: 541, text: "Pinterest", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 542, text: "Prepping", spriteCssClass: "html", url: "https://www.pinterest.com/search/pins/?q=prepping&rs=typed" },
+           {      id: 543, text: "Prepping Infographics", spriteCssClass: "html", url: "https://www.pinterest.com/search/pins/?q=prepping infographics&rs=typed" },
+           {      id: 544, text: "Survival", spriteCssClass: "html", url: "https://www.pinterest.com/search/pins/?q=survival&rs=typed" },
+           {      id: 545, text: "Survival Infographics", spriteCssClass: "html", url: "https://www.pinterest.com/search/pins/?q=survival infographics&rs=typed" },
+      ]
+    },
+    {
+      id: 546, text: "PodCasts", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 547, text: "Canadian Prepper", spriteCssClass: "html", url: "https://open.spotify.com/show/7E5LvPBfxlyvGW0EzmNTz6" },
+           {      id: 548, text: "Casual Preppers Podcast", spriteCssClass: "html", url: "https://open.spotify.com/show/27pKTcu62mvb0J1R6xmRI1" },
+           {      id: 549, text: "Fieldcraft Survival", spriteCssClass: "html", url: "https://open.spotify.com/show/44jjiEXCNRCnHoGi73qy6D" },
+           {      id: 550, text: "Modern Outdoor Survival", spriteCssClass: "html", url: "https://open.spotify.com/show/2yYlHfJUh5mIkYG46iQ88l" },
+           {      id: 551, text: "Practical Prepping", spriteCssClass: "html", url: "https://open.spotify.com/show/74PaZZEwpYPgijxHtahOHc" },
+           {      id: 552, text: "Ready Your Future", spriteCssClass: "html", url: "https://open.spotify.com/show/2BFd1rzUeK8g1BTDpvS9q2" },
+           {      id: 553, text: "Survival", spriteCssClass: "html", url: "https://open.spotify.com/show/5JDHqI4nZe36mcOZI05sYI" },
+           {      id: 554, text: "Survival and Basic Badass Podcast", spriteCssClass: "html", url: "https://open.spotify.com/show/4YdMrZ4oWTPKv4YrcZgExg" },
+           {      id: 555, text: "Survival Punk", spriteCssClass: "html", url: "https://www.survivalpunk.com/" },
+           {      id: 556, text: "The Survival Podcast", spriteCssClass: "html", url: "https://www.thesurvivalpodcast.com/" },
+           {      id: 557, text: "The Survival Show", spriteCssClass: "html", url: "https://open.spotify.com/show/54PfWrTw1EF1rR7jZehvyo" },
+           {      id: 558, text: "The Survivalist Prepper Podcast", spriteCssClass: "html", url: "https://www.podcasts.apple.com/us/podcast/the-survivalist-prepper-podcast/id695268752?mt=2" },
+      ]
+    },
+    {
+      id: 559, text: "Reddit", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 560, text: "Alone TV Show", spriteCssClass: "html", url: "https://www.reddit.com/r/Alonetv/" },
+           {      id: 561, text: "Bug Out Vehicles", spriteCssClass: "html", url: "https://www.reddit.com/r/bugoutvehicles/" },
+           {      id: 562, text: "Bugout", spriteCssClass: "html", url: "https://www.reddit.com/r/bugout/" },
+           {      id: 563, text: "Cascadian Preppers", spriteCssClass: "html", url: "https://www.reddit.com/r/CascadianPreppers/" },
+           {      id: 564, text: "City Survivalists", spriteCssClass: "html", url: "https://www.reddit.com/r/CitySurvivalists/" },
+           {      id: 565, text: "Collapse", spriteCssClass: "html", url: "https://www.reddit.com/r/collapse/" },
+           {      id: 566, text: "Collapse Prep", spriteCssClass: "html", url: "https://www.reddit.com/r/CollapsePrep/" },
+           {      id: 567, text: "Euro Preppers", spriteCssClass: "html", url: "https://www.reddit.com/r/EuroPreppers/" },
+           {      id: 568, text: "Every Day Carry", spriteCssClass: "html", url: "https://www.reddit.com/r/EDC/" },
+           {      id: 569, text: "Gun Deals", spriteCssClass: "html", url: "https://www.reddit.com/r/gundeals/" },
+           {      id: 570, text: "Homestead", spriteCssClass: "html", url: "https://www.reddit.com/r/homestead/" },
+           {      id: 571, text: "Naked and Afraid Show", spriteCssClass: "html", url: "https://www.reddit.com/r/nakedandafraid/" },
+           {      id: 572, text: "Pandemic Preps", spriteCssClass: "html", url: "https://www.reddit.com/r/PandemicPreps/" },
+           {      id: 573, text: "Post Collapse", spriteCssClass: "html", url: "https://www.reddit.com/r/PostCollapse/" },
+           {      id: 574, text: "Prepper Intel", spriteCssClass: "html", url: "https://www.reddit.com/r/PrepperIntel/" },
+           {      id: 575, text: "Prepper Pics", spriteCssClass: "html", url: "https://www.reddit.com/r/prepperpics/" },
+           {      id: 576, text: "Prepper Recipes", spriteCssClass: "html", url: "https://www.reddit.com/r/prepperrecipes/" },
+           {      id: 577, text: "Prepper Sales", spriteCssClass: "html", url: "https://www.reddit.com/r/preppersales/" },
+           {      id: 578, text: "Prepper Tips", spriteCssClass: "html", url: "https://www.reddit.com/r/Preppertips/" },
+           {      id: 579, text: "Preppers", spriteCssClass: "html", url: "https://www.reddit.com/r/preppers/" },
+           {      id: 580, text: "Prepping", spriteCssClass: "html", url: "https://www.reddit.com/r/prepping/" },
+           {      id: 581, text: "Primitive Technology", spriteCssClass: "html", url: "https://www.reddit.com/r/PrimitiveTechnology/" },
+           {      id: 582, text: "Self Reliance", spriteCssClass: "html", url: "https://www.reddit.com/r/selfreliance/" },
+           {      id: 583, text: "Survival", spriteCssClass: "html", url: "https://www.reddit.com/r/Survival/" },
+           {      id: 584, text: "Survival Europe", spriteCssClass: "html", url: "https://www.reddit.com/r/survivaleurope/" },
+           {      id: 585, text: "Survival Grid", spriteCssClass: "html", url: "https://www.reddit.com/r/SurvivalGrid/" },
+           {      id: 586, text: "Survivalism", spriteCssClass: "html", url: "https://www.reddit.com/r/survivalism/" },
+           {      id: 587, text: "Survivalist", spriteCssClass: "html", url: "https://www.reddit.com/r/Survivalist/" },
+           {      id: 588, text: "The Survivalist", spriteCssClass: "html", url: "https://www.reddit.com/r/TheSurvivalist/" },
+           {      id: 589, text: "True Preppers", spriteCssClass: "html", url: "https://www.reddit.com/r/TruePreppers/" },
+           {      id: 590, text: "UK Preppers", spriteCssClass: "html", url: "https://www.reddit.com/r/UKPreppers/" },
+           {      id: 591, text: "Urban Survivalism", spriteCssClass: "html", url: "https://www.reddit.com/r/UrbanSurvivalism/" },
+           {      id: 592, text: "Wall Street Silver", spriteCssClass: "html", url: "https://www.reddit.com/r/Wallstreetsilver/" },
+      ]
+    },
+    {
+      id: 593, text: "Document Sources", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 594, text: "Google Drive Survival Manuals", spriteCssClass: "html", url: "https://www.drive.google.com/drive/u/0/folders/1e81oLsiFGGrNhjJaONGwqFLpkKjji4d7" },
+           {      id: 595, text: "Internet Archive", spriteCssClass: "html", url: "https://www.archive.org/" },
+           {      id: 596, text: "Internet Archive Military Manuals", spriteCssClass: "html", url: "https://www.archive.org/details/military-manuals" },
+           {      id: 597, text: "Internet Archive Survival Skills", spriteCssClass: "html", url: "https://www.archive.org/search?query=Survival+Skills&and%5B%5D=subject%3A&#34;Survival&#34;&and%5B%5D=subject%3A&#34;Survival+skills&#34;&and%5B%5D=subject%3A&#34;Wilderness+survival&#34;&and%5B%5D=subject%3A&#34;SKILLS&#34;&and%5B%5D=subject%3A&#34;DTIC+Archive&#34;&and%5B%5D=mediatype%3A&#34;texts&#34;" },
+           {      id: 598, text: "Media Fire Site 1", spriteCssClass: "html", url: "https://www.mediafire.com/?jne5h4np3fabo8n" },
+           {      id: 599, text: "Media Fire Site 2", spriteCssClass: "html", url: "https://www.mediafire.com/?dy8y55cbt0n5aaa" },
+           {      id: 600, text: "Media Fire Site 3", spriteCssClass: "html", url: "https://www.mediafire.com/?m4pa5omw98h1q4z" },
+           {      id: 601, text: "Media Fire Site 4", spriteCssClass: "html", url: "https://www.mediafire.com/?t07tw2jok2p9bo7" },
+           {      id: 602, text: "Media Fire Site 5", spriteCssClass: "html", url: "https://www.mediafire.com/?lwv8ynhzma4hvma" },
+           {      id: 603, text: "Mini-Manual for the Urban Defender", spriteCssClass: "html", url: "https://www.static1.squarespace.com/static/622cbafd4ab19b7c0966d469/t/638a64ef6d1818153c7bb5b4/1670014192597/Mini+Manual+for+the+Urban+Defender+v5.pdf" },
+           {      id: 604, text: "National Maps", spriteCssClass: "html", url: "https://www.web.archive.org/web/20160329103817/nationalmap.gov/small_scale/printable/reference.html#list" },
+           {      id: 605, text: "Prepper File Share", spriteCssClass: "html", url: "https://www.reddit.com/r/PrepperFileShare/" },
+           {      id: 606, text: "Project Gutenberg", spriteCssClass: "html", url: "https://www.gutenberg.org/" },
+           {      id: 607, text: "Reddit Post 1", spriteCssClass: "html", url: "https://www.reddit.com/r/Survival/comments/ug5v1/building_the_ultimate_survival_library_please/" },
+           {      id: 608, text: "Seasoned Citizen Prepper Downloads", spriteCssClass: "html", url: "https://www.seasonedcitizenprepper.com/preparedness-downloads/" },
+           {      id: 609, text: "Self Reliance Free Online Books", spriteCssClass: "html", url: "https://www.reddit.com/r/selfreliance/comments/zqd33p/free_online_books_for_self_reliance_and/?utm_source=share&utm_medium=ios_app&utm_name=iossmf" },
+           {      id: 610, text: "Steves Page Firearm Manuals", spriteCssClass: "html", url: "https://www.stevespages.com/page7b.htm" },
+           {      id: 611, text: "Steves Pages Gunsmithing and Reloading", spriteCssClass: "html", url: "https://www.stevespages.com/page7d.htm" },
+           {      id: 612, text: "Survivor Library Downloads", spriteCssClass: "html", url: "https://www.survivorlibrary.com/library-download.html" },
+           {      id: 613, text: "The Preparedness Encyclopedia", spriteCssClass: "html", url: "https://www.fluidicice.com/tpe.html" },
+           {      id: 614, text: "True Prepper Library", spriteCssClass: "html", url: "https://www.trueprepper.com/survival-pdfs-downloads/" },
+           {      id: 615, text: "Web GIS", spriteCssClass: "html", url: "https://www.webgis.com/terr_us75m.html" },
+           {      id: 616, text: "WikiPedia Download", spriteCssClass: "html", url: "https://www.en.wikipedia.org/wiki/Wikipedia:Database_download" },
+      ]
+    },
+    {
+      id: 617, text: "Youtube", expanded: false, spriteCssClass: "folder", items: [
+           {      id: 618, text: "Alaska Prepper", spriteCssClass: "html", url: "https://www.youtube.com/@AlaskaPrepper" },
+           {      id: 619, text: "Big Shooterist", spriteCssClass: "html", url: "https://www.youtube.com/user/Bigshooterist" },
+           {      id: 620, text: "Canadian Prepper", spriteCssClass: "html", url: "https://www.youtube.com/@CanadianPrepper" },
+           {      id: 621, text: "City Prepping", spriteCssClass: "html", url: "https://www.youtube.com/@CityPrepping" },
+           {      id: 622, text: "Engineer 775", spriteCssClass: "html", url: "https://www.youtube.com/@engineer775" },
+           {      id: 623, text: "Living Survival", spriteCssClass: "html", url: "https://www.youtube.com/@livingsurvival" },
+           {      id: 624, text: "Prepared Mind 101", spriteCssClass: "html", url: "https://www.youtube.com/@preparedmind101" },
+           {      id: 625, text: "Sensible Prepper", spriteCssClass: "html", url: "https://www.youtube.com/@SensiblePrepper" },
+           {      id: 626, text: "Survival Dispatch", spriteCssClass: "html", url: "https://www.youtube.com/@SurvivalDispatch" },
+           {      id: 627, text: "Survival On Purpose", spriteCssClass: "html", url: "https://www.youtube.com/@SurvivalOnPurpose" },
+           {      id: 628, text: "The Urban Prepper", spriteCssClass: "html", url: "https://www.youtube.com/@TheUrbanPrepper" },
+      ]
+    }
+
+
+
+],
+            loadOnDemand: true
+        });
+
+
+        function displayCustomErrorPage(iframeElement) {
+          iframeElement.contentWindow.document.open();
+          iframeElement.contentWindow.document.write('<h1>Custom Error Page</h1><p>Sorry, this content cannot be displayed.</p>');
+          iframeElement.contentWindow.document.close();
+        };
+
+
+        $(document).on("click", ".kendo-icon", function (e) {
+          var treeview = $("#treeview-kendo").kendoTreeView({
+                // ... (other TreeView configurations here)
+                dataBound: function(e) {
+                    this.collapse(".k-item");
+                }
+            }).data("kendoTreeView");
+            e.preventDefault();
+            // var treeview = $("#treeview-kendo").data("kendoTreeView");
+            //treeview.remove($(this).closest(".k-item"));
+        });
+        document.getElementById('treeview-kendo').addEventListener('scroll', function() {
+            document.getElementById('contentframe').style.top = -this.scrollTop + 'px';
+        });
+        const treeviewContainer = document.getElementById('treeview-container');
+        const iframeContainer = document.getElementById('iframe-container');
+        const contentFrame = document.getElementById('contentframe');
+
+        let isTreeviewHidden = false;
+    
+        document.getElementById('toggle-button').addEventListener('click', function() {
+            if (isTreeviewHidden) {
+                treeviewContainer.style.display = 'block';
+                iframeContainer.style.width = '85%';
+                contentFrame.style.width = "82vw"
+                iframeContainer.style.width="82vw";
+            } else {
+                treeviewContainer.style.display = 'none';
+                contentFrame.style.width = "97vw"
+                iframeContainer.style.width="97vw";
+            }
+    
+            isTreeviewHidden = !isTreeviewHidden;
+        });    
+
+document.getElementById('iframe-container').addEventListener('load', function() {
+    try {
+        // Try accessing the iframe's document
+        var iframeDoc = this.contentDocument || this.contentWindow.document;
+
+        // Check if the iframe's document is empty
+        if (iframeDoc.body.children.length === 0) {
+            throw new Error('Iframe load failed');
+        }
+    } catch (e) {
+        // If an error occurs (like a cross-origin issue), display the custom error page
+        displayCustomErrorPage(this);
+    }
+});
+
+        let isBlurbHidden = false;
+        const blurbContainer = document.getElementById('blurb');
+        document.getElementById('toggle-blurb-button').addEventListener('click', function() {
+            if (isBlurbHidden) {
+                blurbContainer.style.display = 'block';
+            } else {
+                blurbContainer.style.display = 'none';
+            }
+    
+            isBlurbHidden = !isBlurbHidden;
+        });       
+           
+    </script>
+</div>
+</body>

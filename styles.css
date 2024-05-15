@@ -1,0 +1,69 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sticky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .website-logo {
+    /* Add your logo styling here */
+  }
+  
+  .search-bar {
+    /* Add your search bar styling here */
+  }
+  
+  .menu button {
+    /* Add your menu button styling here */
+  }
+  
+  .sticky-filter-section {
+    position: sticky;
+    top: 60px; /* Adjust based on the height of your sticky header */
+    background-color: #f3f3f3;
+    padding: 10px;
+  }
+  
+  .product-filter {
+    /* Add your product filter styling here */
+  }
+  
+  .category-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .categories, .subcategories {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 10px;
+  }
+  
+  .categories button, .subcategories button {
+    margin-right: 10px;
+    /* Add more button styling here */
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .products article {
+    width: 200px;
+    margin: 10px;
+    background-color: #eaeaea;
+    /* Add more product article styling here */
+  }
