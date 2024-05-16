@@ -453,12 +453,10 @@
 
                 if (targetElement) {
                     // Close all other collapse elements
-                    document.querySelectorAll('.collapse.show').forEach(collapse => {
-                        $(collapse).collapse('hide');
-                    });
-
-                    // Open the target collapse element after previous collapse elements are hidden
-                    $(targetCollapse).on('hidden.bs.collapse', function () {
+                    $('.collapse.show').collapse('hide').on('hidden.bs.collapse', function() {
+                        // Remove the event listener to avoid re-opening issues
+                        $(this).off('hidden.bs.collapse');
+                        // Open the clicked collapse element
                         $(targetCollapse).collapse('show');
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     });
