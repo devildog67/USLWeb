@@ -309,27 +309,21 @@
                 <section class="submit-section mt-0">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSubmit" aria-expanded="true" aria-controls="collapseSubmit">
-                                    Submit a Recommended Website
-                                </button>
-                            </h2>
+                            <h3>Submit a Recommended Website</h3>
                         </div>
-                        <div id="collapseSubmit" class="collapse show">
-                            <div class="card-body">
-                                <form id="submissionForm">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="website" placeholder="Recommended Website" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-dark">Submit</button>
-                                </form>
-                            </div>
+                        <div class="card-body">
+                            <form id="submissionForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="website" placeholder="Recommended Website" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-dark">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </section>
@@ -362,6 +356,7 @@
                         link.href = site.url;
                         link.textContent = site.title;
                         link.target = '_blank';
+                        link.draggable = false;  // Make link un-draggable
                         listItem.appendChild(link);
 
                         const saveIcon = document.createElement('span');
@@ -384,6 +379,7 @@
             link.href = url;
             link.textContent = title;
             link.target = '_blank';
+            link.draggable = false;  // Make link un-draggable
             listItem.appendChild(link);
 
             const deleteIcon = document.createElement('span');
@@ -421,6 +417,7 @@
                 link.href = site.url;
                 link.textContent = site.title;
                 link.target = '_blank';
+                link.draggable = false;  // Make link un-draggable
                 listItem.appendChild(link);
 
                 const deleteIcon = document.createElement('span');
@@ -460,11 +457,17 @@
                         $(collapse).collapse('hide');
                     });
 
-                    // Open the target collapse element
-                    $(targetCollapse).collapse('show');
+                    // Open the target collapse element after previous collapse elements are hidden
+                    $(targetCollapse).on('hidden.bs.collapse', function () {
+                        $(targetCollapse).collapse('show');
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    });
 
-                    // Scroll to the target element
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // If there are no open collapse elements, open the target collapse element immediately
+                    if ($('.collapse.show').length === 0) {
+                        $(targetCollapse).collapse('show');
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
