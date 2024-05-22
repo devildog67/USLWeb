@@ -384,6 +384,9 @@
     </div>
 
     <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         // Function to fetch and display resources
         function loadResources(jsonFile, listId) {
             fetch(jsonFile)
@@ -451,7 +454,8 @@
                             const infoIcon = document.createElement('span');
                             infoIcon.className = 'info-icon ml-2';
                             infoIcon.innerHTML = 'ℹ️';
-                            infoIcon.alt = "More information about the website";
+                            infoIcon.setAttribute('data-toggle', 'tooltip');
+                            infoIcon.setAttribute('title', 'More information about Website');
                             infoIcon.addEventListener('click', () => showDescription(site.description, domain + ".png", site.url));
                             listItem.appendChild(infoIcon);
                         }
@@ -459,7 +463,8 @@
                         const saveIcon = document.createElement('span');
                         saveIcon.className = 'save-icon ml-2';
                         saveIcon.innerHTML = '💾';
-                        saveIcon.alt = "Save to favorites";
+                        saveIcon.setAttribute('data-toggle', 'tooltip');
+                        saveIcon.setAttribute('title', 'Save to Favorites');
                         saveIcon.addEventListener('click', () => addToFavorites(site.title, site.url));
                         listItem.appendChild(saveIcon);
     
@@ -556,6 +561,8 @@
             const deleteIcon = document.createElement('span');
             deleteIcon.className = 'delete-icon ml-2';
             deleteIcon.innerHTML = '🗑️';
+            deleteIcon.setAttribute('data-toggle', 'tooltip');
+            deleteIcon.setAttribute('title', 'Remove from Favorites');
             deleteIcon.addEventListener('click', () => removeFromFavorites(listItem));
             listItem.appendChild(deleteIcon);
     
