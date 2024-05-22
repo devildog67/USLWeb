@@ -1,6 +1,6 @@
 [
-   { "title": "Prepping", "url": "https://www.pinterest.com/search/pins/?q=prepping&rs=typed" },
-   { "title": "Prepping Infographics", "url": "https://www.pinterest.com/search/pins/?q=prepping infographics&rs=typed" },
-   { "title": "Survival", "url": "https://www.pinterest.com/search/pins/?q=survival&rs=typed" },
-   { "title": "Survival Infographics", "url": "https://www.pinterest.com/search/pins/?q=survival infographics&rs=typed" }
+  { "title": "Prepping", "url": "https://www.pinterest.com/search/pins/?q=prepping&rs=typed", "description": "The Prepping section on Pinterest features a collection of pins related to emergency preparedness and survival skills. Users can find a variety of infographics, articles, DIY projects, and checklists that provide tips on food storage, self-defense, and other essential prepping topics." },
+  { "title": "Prepping Infographics", "url": "https://www.pinterest.com/search/pins/?q=prepping%20infographics&rs=typed", "description": "Prepping Infographics on Pinterest offers visually engaging and informative graphics that cover various aspects of emergency preparedness. These infographics provide quick tips, data, and how-to guides on subjects such as creating bug-out bags, water purification methods, and food storage techniques." },
+  { "title": "Survival", "url": "https://www.pinterest.com/search/pins/?q=survival&rs=typed", "description": "The Survival section on Pinterest includes a wide array of pins focused on survival skills and techniques. Users can explore content on wilderness survival, urban survival, first aid, and emergency planning, featuring helpful visuals, guides, and instructional videos." },
+  { "title": "Survival Infographics", "url": "https://www.pinterest.com/search/pins/?q=survival%20infographics&rs=typed", "description": "Survival Infographics on Pinterest features a collection of visually appealing and educational graphics that highlight key survival skills and strategies. These infographics cover topics such as fire starting, shelter building, navigation, and first aid, providing valuable information in an easy-to-understand format." }
 ]

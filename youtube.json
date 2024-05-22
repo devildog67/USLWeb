@@ -1,13 +1,13 @@
 [
-   { "title": "Alaska Prepper", "url": "https://www.youtube.com/@AlaskaPrepper" },
-   { "title": "Big Shooterist", "url": "https://www.youtube.com/user/Bigshooterist" },
-   { "title": "Canadian Prepper", "url": "https://www.youtube.com/@CanadianPrepper" },
-   { "title": "City Prepping", "url": "https://www.youtube.com/@CityPrepping" },
-   { "title": "Engineer 775", "url": "https://www.youtube.com/@engineer775" },
-   { "title": "Living Survival", "url": "https://www.youtube.com/@livingsurvival" },
-   { "title": "Prepared Mind 101", "url": "https://www.youtube.com/@preparedmind101" },
-   { "title": "Sensible Prepper", "url": "https://www.youtube.com/@SensiblePrepper" },
-   { "title": "Survival Dispatch", "url": "https://www.youtube.com/@SurvivalDispatch" },
-   { "title": "Survival On Purpose", "url": "https://www.youtube.com/@SurvivalOnPurpose" },
-   { "title": "The Urban Prepper", "url": "https://www.youtube.com/@TheUrbanPrepper" }
+  { "title": "Alaska Prepper", "url": "https://www.youtube.com/@AlaskaPrepper", "description": "Alaska Prepper is a YouTube channel that focuses on emergency preparedness, survival skills, and self-reliance. The host, Rudy, shares practical advice, product reviews, and current event analysis to help viewers prepare for various emergencies and become more self-sufficient." },
+  { "title": "Big Shooterist", "url": "https://www.youtube.com/user/Bigshooterist", "description": "Big Shooterist is a YouTube channel dedicated to firearms education and responsible gun ownership. The channel features reviews, tutorials, and discussions on various firearms and shooting techniques." },
+  { "title": "Canadian Prepper", "url": "https://www.youtube.com/@CanadianPrepper", "description": "Canadian Prepper is a YouTube channel that provides insights into emergency preparedness, survival gear, and self-reliance. The host covers a wide range of topics, including gear reviews, survival strategies, and current events impacting preparedness." },
+  { "title": "City Prepping", "url": "https://www.youtube.com/@CityPrepping", "description": "City Prepping offers guidance on urban survival and emergency preparedness. The channel covers topics such as food storage, water purification, and practical tips for surviving in an urban environment during a disaster." },
+  { "title": "Engineer 775", "url": "https://www.youtube.com/@engineer775", "description": "Engineer 775 is a YouTube channel focused on homesteading, off-grid living, and sustainable solutions. The host shares projects, tutorials, and product reviews to help viewers achieve self-sufficiency and resilience." },
+  { "title": "Living Survival", "url": "https://www.youtube.com/@livingsurvival", "description": "Living Survival is a YouTube channel that provides reviews and tutorials on survival gear, outdoor equipment, and emergency preparedness. The channel aims to help viewers make informed decisions about the best tools and techniques for survival." },
+  { "title": "Prepared Mind 101", "url": "https://www.youtube.com/@preparedmind101", "description": "Prepared Mind 101 offers practical advice and reviews on survival gear, bushcraft, and preparedness. The channel features gear tests, survival tips, and discussions on how to be prepared for various scenarios." },
+  { "title": "Sensible Prepper", "url": "https://www.youtube.com/@SensiblePrepper", "description": "Sensible Prepper is a YouTube channel that focuses on practical prepping and self-reliance. The host provides gear reviews, survival tips, and advice on how to prepare for emergencies in a sensible and realistic way." },
+  { "title": "Survival Dispatch", "url": "https://www.youtube.com/@SurvivalDispatch", "description": "Survival Dispatch is a comprehensive resource for survival and preparedness information. The channel features expert advice, tutorials, and gear reviews to help viewers improve their survival skills and readiness for any situation." },
+  { "title": "Survival On Purpose", "url": "https://www.youtube.com/@SurvivalOnPurpose", "description": "Survival On Purpose is dedicated to survival skills, preparedness, and outdoor adventures. The channel offers gear reviews, survival tips, and practical advice for staying prepared in various situations." },
+  { "title": "The Urban Prepper", "url": "https://www.youtube.com/@TheUrbanPrepper", "description": "The Urban Prepper focuses on emergency preparedness and survival strategies for urban environments. The channel covers a wide range of topics, including gear reviews, disaster planning, and practical tips for city dwellers." }
 ]

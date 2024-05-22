@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Ultimate Survival Library Web</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css?v=1.0.0" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js?v=1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js?v=1.0.0"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js?v=1.0.0"></script>
     <style>
         body {
             background-color: #E8E8E8;
@@ -69,6 +72,14 @@
         .delete-icon:hover {
             color: #AA0000;
         }
+        .info-icon {
+            color: #6B8EAD;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .info-icon:hover {
+            color: #333333;
+        }
         .btn-dark {
             background-color: #6B8EAD;
             border: none;
@@ -76,6 +87,10 @@
         }
         .btn-dark:hover {
             background-color: #333333;
+            color: #FFFFFF;
+        }
+        .modal-header {
+            background-color: #6B8EAD;
             color: #FFFFFF;
         }
         footer {
@@ -91,12 +106,36 @@
         .container {
             max-width: 1600px;
         }
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        .description {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border: 1px solid #E8E8E8;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0NZ83R0M14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0NZ83R0M14');
+</script>
 <body>
     <header class="text-white text-center py-3">
         <h1>The Ultimate Survival Library Web</h1>
     </header>
+    <div class="container description">
+        Welcome to The Ultimate Survival Library Web (USL Web), your ultimate collection of curated links related to survival and prepping. Explore resources on general survival tips, food preservation, firearms, homesteading, and more. Whether you're a seasoned prepper or just starting out, our comprehensive library will help you find the best information and tools to enhance your preparedness. Join our community and start building your survival skills today.
+    </div>     
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo">USL Web</a>
@@ -312,18 +351,7 @@
                             <h3>Submit a Recommended Website</h3>
                         </div>
                         <div class="card-body">
-                            <form id="submissionForm">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" id="website" placeholder="Recommended Website" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-dark">Submit</button>
-                            </form>
+                            <p>Please email questions or recommended websites to <a href="mailto:info@uslweb.com">info@uslweb.com</a>.</p>
                         </div>
                     </div>
                 </section>
@@ -333,16 +361,29 @@
     <footer class="text-white text-center py-3 mt-5">
         <p>&copy; 2024 The Ultimate Survival Library Web. All rights reserved.</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById('submissionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your submission!');
-            document.getElementById('submissionForm').reset();
-        });
 
+    <!-- Bootstrap Modal for Website Descriptions -->
+    <div class="modal fade" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="descriptionModalLabel">Website Description</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="descriptionContent"></div>
+                    <div id="descriptionImage"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
         // Function to fetch and display resources
         function loadResources(jsonFile, listId) {
             fetch(jsonFile)
@@ -352,52 +393,182 @@
                     data.forEach(site => {
                         const listItem = document.createElement('li');
                         listItem.className = 'list-group-item';
+                                                
+                        // replace site.url trailing "/" with ""
+                        site.url = site.url.replace(/\/$/, "");
+                        // store the site.url hostname without the subdomain
+                        const baseUrl = new URL(site.url).hostname;
+                        // remove the subdomain from the baseUrl
+                        const baseUrlParts = baseUrl.split('.');
+                        if (baseUrlParts.length > 2) {
+                            baseUrlParts.shift();
+                        }
+                        const baseUrlNoSubdomain = baseUrlParts.join('.');
+
+                        if (baseUrlNoSubdomain === "spotify.com") {
+                            //var favicon = `images/${site.url.replace(/\/$/, "").replace(/https:\/\/www\./g, "").replace(/http:\/\/www\./g, "").replace(/https:\/\//g, "").replace(/http:\/\//g, "").replace(/\./g, "_").replace(/\//g, "_")}_favicon.ico`;
+                            favicon = `images/spotify_com_favicon.ico`;
+                        }
+                        else {
+                            var favicon = `images/${baseUrlNoSubdomain.replace(/\/$/, "").replace(/https:\/\/www\./g, "").replace(/http:\/\/www\./g, "").replace(/https:\/\//g, "").replace(/http:\/\//g, "").replace(/\./g, "_").replace(/\//g, "_")}_favicon.ico`;
+                        }
+                        if (baseUrlNoSubdomain === "pinterest.com") {
+                            favicon = `images/pinterest_com_favicon.ico`;
+                        }
+
                         const link = document.createElement('a');
                         link.href = site.url;
                         link.textContent = site.title;
                         link.target = '_blank';
                         link.draggable = false;  // Make link un-draggable
+
+                        const iconImg = document.createElement('img');
+                        iconImg.style.width = '16px';
+                        iconImg.style.height = '16px';
+                        iconImg.style.marginRight = '10px';
+
+                        // Check if the favicon file exists
+                        imageExists(favicon, function(exists) {
+                            iconImg.src = exists ? favicon : 'images/default.ico';
+                            listItem.prepend(iconImg);
+                        });
+
                         listItem.appendChild(link);
 
+                        const url = new URL(site.url);
+                        const hostname = url.hostname; // "www.somewebsite.com"
+                        const parts = hostname.split('.');
+
+                        // Ensure there are at least two parts to avoid errors
+                        let domain = '';
+                        if (parts.length >= 2) {
+                            domain = parts[1];
+                        } else {
+                            console.error('Unexpected URL structure');
+                        }
+
+                        if (site.description && site.description.trim() !== '') {
+                            const infoIcon = document.createElement('span');
+                            infoIcon.className = 'info-icon ml-2';
+                            infoIcon.innerHTML = 'ℹ️';
+                            infoIcon.alt = "More information about the website";
+                            infoIcon.addEventListener('click', () => showDescription(site.description, domain + ".png", site.url));
+                            listItem.appendChild(infoIcon);
+                        }
+    
                         const saveIcon = document.createElement('span');
                         saveIcon.className = 'save-icon ml-2';
                         saveIcon.innerHTML = '💾';
+                        saveIcon.alt = "Save to favorites";
                         saveIcon.addEventListener('click', () => addToFavorites(site.title, site.url));
                         listItem.appendChild(saveIcon);
-
+    
                         list.appendChild(listItem);
                     });
                 })
                 .catch(error => console.error(`Error fetching ${jsonFile}:`, error));
         }
 
+        // Function to check if an image exists in the same folder as the webpage
+        function imageExists(imageUrl, callback) {
+            fetch(imageUrl, { method: 'HEAD' })
+                .then(response => {
+                    callback(response.ok);
+                })
+                .catch(() => {
+                    callback(false);
+                });
+        }
+
+        function showDescription(description, image, url) {
+            document.getElementById('descriptionContent').innerText = description;
+            const descriptionImage = document.getElementById('descriptionImage');
+            descriptionImage.innerHTML = '';  // Clear any existing content
+
+            let imageUrl = `images/${image}`;
+
+            // if the url contains "blogspot", remove ".png" from the end of the imageUrl and add "_blogspot.png"
+            if (url.includes("blogspot")) {
+                imageUrl = imageUrl.replace(".png", "_blogspot.png");
+            }
+
+            if ((image === "youtube.png" || image === "spotify.png" || image === "pinterest.png" || image === "reddit.png") && url) {
+                if(image === "reddit.png"){
+                    var x = 1;
+                }
+                const urlObj = new URL(url);
+                const hostnameParts = urlObj.hostname.split('.');
+                const pathParts = urlObj.pathname.split('/');
+
+                // Extract second-level domain and top-level domain
+                const secondLevelDomain = hostnameParts.slice(-2, -1)[0]; // Second-level domain
+                const topLevelDomain = hostnameParts.slice(-1)[0]; // Top-level domain
+
+                // Extract absolute path and clean it
+                const absolutePath = pathParts.slice(1).join('/').replace(/[^a-zA-Z0-9]/g, '_');
+                
+                // Combine these parts to create the new imageUrl
+                if(image === "pinterest.png"){
+                    var searchString = urlObj.search;
+                    // replace all instances of "%20" with "_" in searchString
+                    searchString = searchString.replace(/%20/g, '_');
+                    // const search = searchString.replace(/[^a-zA-Z0-9%20]/g, '_');
+                    const search = searchString.replace(/[^a-zA-Z0-9]/g, '_');
+                    imageUrl = `images/${secondLevelDomain}_${topLevelDomain}_${absolutePath}${search}` + ".png";
+                }
+                else {
+                    imageUrl = `images/${secondLevelDomain}_${absolutePath}` + ".png";
+                }
+                if(image === "reddit.png"){
+                    imageUrl = imageUrl.replace(".png", "_.png");                    
+                }
+            }
+
+            if (image && image.trim() !== '') {
+                imageExists(imageUrl, function(exists) {
+                    if (exists) {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imageUrl;
+                        imgElement.alt = "Image related to the website";  // Add alt text for better accessibility
+                        imgElement.style.maxWidth = "100%";  // Ensure the image doesn't overflow its container
+                        imgElement.style.border = "2px solid blue";  // Add a thin blue border
+                        imgElement.style.marginTop = "10px";  // Add some margin on top for better spacing
+                        descriptionImage.appendChild(imgElement);
+                    }
+                });
+            }
+            $('#descriptionModal').modal('show');
+        }
+
+    
         function addToFavorites(title, url) {
             const favoritesList = document.getElementById('favoritesList');
             const listItem = document.createElement('li');
             listItem.className = 'list-group-item';
+            
             const link = document.createElement('a');
             link.href = url;
             link.textContent = title;
             link.target = '_blank';
             link.draggable = false;  // Make link un-draggable
             listItem.appendChild(link);
-
+    
             const deleteIcon = document.createElement('span');
             deleteIcon.className = 'delete-icon ml-2';
             deleteIcon.innerHTML = '🗑️';
             deleteIcon.addEventListener('click', () => removeFromFavorites(listItem));
             listItem.appendChild(deleteIcon);
-
+    
             favoritesList.appendChild(listItem);
             saveFavorites();
         }
-
+    
         function removeFromFavorites(listItem) {
             const favoritesList = document.getElementById('favoritesList');
             favoritesList.removeChild(listItem);
             saveFavorites();
         }
-
+    
         function saveFavorites() {
             const favorites = [];
             document.querySelectorAll('#favoritesList .list-group-item').forEach(item => {
@@ -406,30 +577,31 @@
             });
             localStorage.setItem('favorites', JSON.stringify(favorites));
         }
-
+    
         function loadFavorites() {
             const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
             const favoritesList = document.getElementById('favoritesList');
             favorites.forEach(site => {
                 const listItem = document.createElement('li');
                 listItem.className = 'list-group-item';
+                
                 const link = document.createElement('a');
                 link.href = site.url;
                 link.textContent = site.title;
                 link.target = '_blank';
                 link.draggable = false;  // Make link un-draggable
                 listItem.appendChild(link);
-
+    
                 const deleteIcon = document.createElement('span');
                 deleteIcon.className = 'delete-icon ml-2';
                 deleteIcon.innerHTML = '🗑️';
                 deleteIcon.addEventListener('click', () => removeFromFavorites(listItem));
                 listItem.appendChild(deleteIcon);
-
+    
                 favoritesList.appendChild(listItem);
             });
         }
-
+    
         // Load resources for each panel bar
         loadResources('general.json', 'generalList');
         loadResources('blogs.json', 'blogsList');
@@ -443,14 +615,14 @@
         loadResources('reddit.json', 'redditList');
         loadResources('documents.json', 'documentsList');
         loadResources('youtube.json', 'youtubeList');
-
+    
         // Handle navbar link clicks to open corresponding panel bar and scroll to it
         document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetCollapse = this.getAttribute('data-target');
                 const targetElement = document.querySelector(targetCollapse);
-
+    
                 if (targetElement) {
                     // Close all other collapse elements
                     $('.collapse.show').collapse('hide').on('hidden.bs.collapse', function() {
@@ -460,7 +632,7 @@
                         $(targetCollapse).collapse('show');
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     });
-
+    
                     // If there are no open collapse elements, open the target collapse element immediately
                     if ($('.collapse.show').length === 0) {
                         $(targetCollapse).collapse('show');
@@ -469,12 +641,12 @@
                 }
             });
         });
-
+    
         // Load favorites from localStorage when the page loads
         window.addEventListener('load', loadFavorites);
-
+    
         // Save favorites to localStorage when the page is unloaded
         window.addEventListener('beforeunload', saveFavorites);
-    </script>
+    </script>    
 </body>
 </html>

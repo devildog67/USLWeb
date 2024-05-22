@@ -1,6 +1,5 @@
 [
-   { "title": "Food Storage Made Easy", "url": "https://www.foodstoragemadeeasy.net/" },
-   { "title": "Food Storage Moms", "url": "https://www.foodstoragemoms.com/" },
-   { "title": "Ready Nutrition", "url": "https://www.readynutrition.com/" },
-   { "title": "The Organic Prepper", "url": "https://www.theorganicprepper.com/" }
+  { "title": "Food Storage Moms", "url": "https://www.foodstoragemoms.com/", "description": "Food Storage Moms provides comprehensive guides on food storage, emergency preparedness, and self-reliance. The site features recipes, food preservation techniques, and tips for building a well-rounded food storage system. It aims to help families achieve a higher level of preparedness and self-sufficiency." },
+  { "title": "Ready Nutrition", "url": "https://www.readynutrition.com/", "description": "Ready Nutrition offers a wide range of articles and resources on emergency preparedness, survival skills, and healthy living. The site covers topics such as food storage, gardening, natural health remedies, and self-reliance, helping readers prepare for various emergencies and lead more sustainable lives." },
+  { "title": "The Organic Prepper", "url": "https://www.theorganicprepper.com/", "description": "The Organic Prepper provides insights and advice on prepping, self-reliance, and frugal living from a holistic perspective. The site covers a variety of topics, including food storage, gardening, DIY projects, and alternative health, aiming to help readers become more prepared and self-sufficient." }
 ]
