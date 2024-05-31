@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Submission Test</title>
+</head>
+<body>
+    <h1>Submit a URL</h1>
+    <form id="urlForm">
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" required>
+        <input type="hidden" id="secretKey" value="VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const url = document.getElementById('url').value;
+            const secretKey = document.getElementById('secretKey').value;
+
+            fetch('submitURL_new.php', { // Replace with the actual URL of your PHP script
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-SECRET-KEY': secretKey
+                },
+                body: new URLSearchParams({
+                    'url': url
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response').textContent = data;
+            })
+            .catch(error => {
+                document.getElementById('response').textContent = 'An error occurred: ' + error;
+            });
+        });
+    </script>
+</body>
+</html>

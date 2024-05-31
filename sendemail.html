@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test PHP Email</title>
+</head>
+<body>
+    <h1>Test PHP Email</h1>
+    <button id="sendEmailButton">Send Email</button>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('sendEmailButton').addEventListener('click', function() {
+            const emailData = {
+                to: 'pablojflores@gmail.com', // Replace with the recipient's email address
+                subject: 'Test Email',
+                message: 'This is a test email sent from PHP.'
+            };
+
+            fetch('send_email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(emailData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerText = data.message;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('response').innerText = 'Error sending email';
+            });
+        });
+    </script>
+</body>
+</html>

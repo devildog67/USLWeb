@@ -1,0 +1,328 @@
+[12-May-2024 08:35:50 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[12-May-2024 08:35:50 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[12-May-2024 08:51:22 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[12-May-2024 08:51:22 UTC] Cron reschedule event error for hook: nfd_data_sync_cron, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"minutely","args":[],"interval":60}
+[12-May-2024 08:51:22 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[12-May-2024 14:04:33 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[12-May-2024 14:04:34 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[12-May-2024 14:07:15 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 00:51:26 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 00:51:34 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:11:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 01:56:58 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 02:06:41 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 02:06:41 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 02:43:52 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 03:13:13 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 03:33:22 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 05:08:39 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 11:57:18 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[13-May-2024 11:57:18 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[14-May-2024 04:38:56 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[14-May-2024 13:42:11 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[14-May-2024 14:42:13 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[14-May-2024 17:18:15 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[14-May-2024 17:23:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[15-May-2024 00:45:56 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[15-May-2024 20:52:34 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[16-May-2024 14:02:43 UTC] PHP Warning:  Cannot modify header information - headers already sent in /home1/rvfdcfte/public_html/wp-content/plugins/wp-plugin-hostgator/vendor/newfold-labs/wp-module-ecommerce/includes/ECommerce.php on line 197
+[27-May-2024 08:36:24 America/Chicago] [2024-05-27 08:36:24] No secret key provided. IP: 89.187.164.137
+[27-May-2024 08:41:02 America/Chicago] [2024-05-27 08:41:02] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:15:45 America/Chicago] [2024-05-27 09:15:45] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:16:39 America/Chicago] [2024-05-27 09:16:39] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:17:29 America/Chicago] [2024-05-27 09:17:29] Array
+(
+    [Content-Length] => 37
+    [Sec-Ch-Ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [Content-Type] => application/x-www-form-urlencoded
+    [X-Secret-Key] => TheUltimateSurvivalLibrary
+    [Sec-Ch-Ua-Mobile] => ?0
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Accept] => */*
+    [Origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [Sec-Fetch-Site] => cross-site
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => en-US,en;q=0.9,es;q=0.8
+    [Priority] => u=1, i
+    [Host] => www.uslweb.com
+    [X-HTTPS] => 1
+)
+
+[27-May-2024 09:17:29 America/Chicago] [2024-05-27 09:17:29] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:18:40 America/Chicago] [2024-05-27 09:18:40] Array
+(
+    [Content-Length] => 37
+    [Sec-Ch-Ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [Content-Type] => application/x-www-form-urlencoded
+    [X-Secret-Key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [Sec-Ch-Ua-Mobile] => ?0
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Accept] => */*
+    [Origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [Sec-Fetch-Site] => cross-site
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => en-US,en;q=0.9,es;q=0.8
+    [Priority] => u=1, i
+    [Host] => www.uslweb.com
+    [X-HTTPS] => 1
+)
+
+[27-May-2024 09:18:40 America/Chicago] [2024-05-27 09:18:40] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:19:59 America/Chicago] [2024-05-27 09:19:59] Array
+(
+    [Content-Length] => 37
+    [Sec-Ch-Ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [Content-Type] => application/x-www-form-urlencoded
+    [X-Secret-Key] => TheUltimateSurvivalLibrary
+    [Sec-Ch-Ua-Mobile] => ?0
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Accept] => */*
+    [Origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [Sec-Fetch-Site] => cross-site
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => en-US,en;q=0.9,es;q=0.8
+    [Priority] => u=1, i
+    [Host] => www.uslweb.com
+    [X-HTTPS] => 1
+)
+
+[27-May-2024 09:19:59 America/Chicago] [2024-05-27 09:19:59] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:21:12 America/Chicago] [2024-05-27 09:21:12] Array
+(
+    [Content-Length] => 37
+    [Sec-Ch-Ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [Content-Type] => application/x-www-form-urlencoded
+    [X-Secret-Key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [Sec-Ch-Ua-Mobile] => ?0
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Accept] => */*
+    [Origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [Sec-Fetch-Site] => cross-site
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => en-US,en;q=0.9,es;q=0.8
+    [Priority] => u=1, i
+    [Host] => www.uslweb.com
+    [X-HTTPS] => 1
+)
+
+[27-May-2024 09:21:12 America/Chicago] [2024-05-27 09:21:12] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:23:08 America/Chicago] [2024-05-27 09:23:08] Array
+(
+    [Content-Length] => 37
+    [Sec-Ch-Ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [Content-Type] => application/x-www-form-urlencoded
+    [X-Secret-Key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [Sec-Ch-Ua-Mobile] => ?0
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Accept] => */*
+    [Origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [Sec-Fetch-Site] => cross-site
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => en-US,en;q=0.9,es;q=0.8
+    [Priority] => u=1, i
+    [Host] => www.uslweb.com
+    [X-HTTPS] => 1
+)
+
+[27-May-2024 09:23:08 America/Chicago] [2024-05-27 09:23:08] No secret key provided. IP: 89.187.164.137
+[27-May-2024 09:24:45 America/Chicago] [2024-05-27 09:24:45] Received headers: Array
+(
+    [Content-Length] => 37
+    [Sec-Ch-Ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [Content-Type] => application/x-www-form-urlencoded
+    [X-Secret-Key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [Sec-Ch-Ua-Mobile] => ?0
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Accept] => */*
+    [Origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [Sec-Fetch-Site] => cross-site
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Dest] => empty
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Accept-Language] => en-US,en;q=0.9,es;q=0.8
+    [Priority] => u=1, i
+    [Host] => www.uslweb.com
+    [X-HTTPS] => 1
+)
+
+
+[27-May-2024 09:24:45 America/Chicago] [2024-05-27 09:24:45] No secret key provided. IP: 89.187.164.137
+
+[27-May-2024 09:27:37 America/Chicago] [2024-05-27 09:27:37] Received headers: Array
+(
+    [content-length] => 37
+    [sec-ch-ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [content-type] => application/x-www-form-urlencoded
+    [x-secret-key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [sec-ch-ua-mobile] => ?0
+    [user-agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [sec-ch-ua-platform] => "Windows"
+    [accept] => */*
+    [origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [sec-fetch-site] => cross-site
+    [sec-fetch-mode] => cors
+    [sec-fetch-dest] => empty
+    [accept-encoding] => gzip, deflate, br, zstd
+    [accept-language] => en-US,en;q=0.9,es;q=0.8
+    [priority] => u=1, i
+    [host] => www.uslweb.com
+    [x-https] => 1
+)
+
+
+[27-May-2024 09:27:37 America/Chicago] [2024-05-27 09:27:37] Invalid secret key. IP: 89.187.164.137
+
+[27-May-2024 09:30:52 America/Chicago] [2024-05-27 09:30:52] Received headers: Array
+(
+    [content-length] => 37
+    [sec-ch-ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [content-type] => application/x-www-form-urlencoded
+    [x-secret-key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [sec-ch-ua-mobile] => ?0
+    [user-agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [sec-ch-ua-platform] => "Windows"
+    [accept] => */*
+    [origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [sec-fetch-site] => cross-site
+    [sec-fetch-mode] => cors
+    [sec-fetch-dest] => empty
+    [accept-encoding] => gzip, deflate, br, zstd
+    [accept-language] => en-US,en;q=0.9,es;q=0.8
+    [priority] => u=1, i
+    [host] => www.uslweb.com
+    [x-https] => 1
+)
+
+
+[27-May-2024 09:30:52 America/Chicago] [2024-05-27 09:30:52] Invalid secret key. IP: 89.187.164.137
+
+[27-May-2024 09:31:49 America/Chicago] [2024-05-27 09:31:49] Received headers: Array
+(
+    [content-length] => 37
+    [sec-ch-ua] => "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+    [content-type] => application/x-www-form-urlencoded
+    [x-secret-key] => VGhlVWx0aW1hdGVTdXJ2aXZhbExpYnJhcnk=
+    [sec-ch-ua-mobile] => ?0
+    [user-agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+    [sec-ch-ua-platform] => "Windows"
+    [accept] => */*
+    [origin] => chrome-extension://lnhkjmcobfcjpfbphedefmeaibdkgiii
+    [sec-fetch-site] => cross-site
+    [sec-fetch-mode] => cors
+    [sec-fetch-dest] => empty
+    [accept-encoding] => gzip, deflate, br, zstd
+    [accept-language] => en-US,en;q=0.9,es;q=0.8
+    [priority] => u=1, i
+    [host] => www.uslweb.com
+    [x-https] => 1
+)
+
+
+[27-May-2024 09:31:49 America/Chicago] [2024-05-27 09:31:49] Incoming secret key (decoded): TheUltimateSurvivalLibrary
+
+[27-May-2024 09:31:49 America/Chicago] [2024-05-27 09:31:49] Valid secret key: TheUltimateSurvivalLibrary
+
+[27-May-2024 09:31:49 America/Chicago] [2024-05-27 09:31:49] Received URL: https://homesteading.com/
+
+[28-May-2024 12:20:07 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:20:07 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:15 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:15 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:16 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:16 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:49 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:49 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:52 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:52 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:53 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:21:53 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:24:01 America/Chicago] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for home1/rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:24:01 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for home1/rvfdcfte failed: Name or service not known in /home1/rvfdcfte/public_html/db_connection.php:8
+Stack trace:
+#0 /home1/rvfdcfte/public_html/db_connection.php(8): mysqli->__construct('home1/rvfdcfte', 'rvfdcfte_uslweb...', Object(SensitiveParameterValue), 'rvfdcfte_uslweb')
+#1 /home1/rvfdcfte/public_html/query_categories.php(2): include('/home1/rvfdcfte...')
+#2 {main}
+  thrown in /home1/rvfdcfte/public_html/db_connection.php on line 8
+[28-May-2024 12:29:14 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rvfdcfte_uslweb.categories' doesn't exist in /home1/rvfdcfte/public_html/query_categories.php:5
+Stack trace:
+#0 /home1/rvfdcfte/public_html/query_categories.php(5): mysqli->query('SELECT * FROM c...')
+#1 {main}
+  thrown in /home1/rvfdcfte/public_html/query_categories.php on line 5
+[28-May-2024 22:16:58 America/Chicago] [2024-05-28 22:16:58] No secret key provided. IP: 104.133.42.223
+
+[30-May-2024 17:36:23 America/Chicago] PHP Warning:  Undefined array key "username" in /home1/rvfdcfte/public_html/authenticate.php on line 8
+[30-May-2024 17:36:23 America/Chicago] PHP Warning:  Undefined array key "password" in /home1/rvfdcfte/public_html/authenticate.php on line 9
+[30-May-2024 17:50:02 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home1/rvfdcfte/public_html/authenticate.php on line 21
+[30-May-2024 18:23:51 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/rvfdcfte/public_html/authenticate.php:21) in /home1/rvfdcfte/public_html/authenticate.php on line 33
+[30-May-2024 20:32:52 America/Chicago] [2024-05-30 20:32:52] Received message from pablo <pablojflores@gmail.com>: testtesttest
+
+[30-May-2024 20:38:22 America/Chicago] [2024-05-30 20:38:22] Received message from pablo <pablojflores@gmail.com>: This is a test
+
+[30-May-2024 20:40:27 America/Chicago] [2024-05-30 20:40:27] Received message from Pablo Flores <pablojflores@gmail.com>: This is another test
+
+[30-May-2024 20:42:21 America/Chicago] [2024-05-30 20:42:21] Received message from Pablo Flores <info@uslweb.com>: This is the third test
+
+[30-May-2024 20:43:55 America/Chicago] [2024-05-30 20:43:55] Received message from Pablo Flores <info@uslweb.com>: This is the fourth test
+
+[31-May-2024 03:13:34 America/Chicago] [2024-05-31 03:13:34] No secret key provided. IP: 104.133.42.201
+
+[31-May-2024 03:13:48 America/Chicago] [2024-05-31 03:13:48] No secret key provided. IP: 104.133.42.201
+
